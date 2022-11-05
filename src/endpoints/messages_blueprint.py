@@ -1,4 +1,3 @@
-import asyncio
 from flask import Blueprint
 from flask import request
 from services.discord.send_message_to_channel import send_message_to_channel
