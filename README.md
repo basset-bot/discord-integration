@@ -27,6 +27,12 @@ Instalar dependências
 pip install -r requirements.txt
 ```
 
+Consertar erro na lib `pafy`
+
+```bash
+cp libfix/backend_youtube_dl.py venv/lib/python3.8/site-packages/pafy/backend_youtube_dl.py
+```
+
 ## Executar (em desenvolvimento)
 
 ```bash
