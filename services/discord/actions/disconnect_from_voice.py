@@ -14,13 +14,12 @@ class DisconnectFromVoice(Base):
 
         if not voice_client:
             result['type'] = 'not_connected'
-        else:
-            # this is a famous GAMBIARRA
-            # disconnects bot
-            member = guild.get_member(cls.discord.user.id) 
-            await member.move_to(None)
+            return result
+    
+        await voice_client.disconnect()
+        voice_client.cleanup()
 
-            result['disconnected_channel'] =  id_name_builder(voice_client.channel)
-            result['type'] = 'success'
+        result['disconnected_channel'] =  id_name_builder(voice_client.channel)
+        result['type'] = 'success'
 
         return result
