@@ -1,5 +1,5 @@
 import services.discord.support.fetch as fetch
-from services.discord.support.id_name_builder import id_name_builder
+from services.discord.support.attr_builder import attr_builder
 from services.discord.actions.base import Base
 
 class DisconnectFromVoice(Base):
@@ -19,7 +19,7 @@ class DisconnectFromVoice(Base):
         await voice_client.disconnect()
         voice_client.cleanup()
 
-        result['disconnected_channel'] =  id_name_builder(voice_client.channel)
+        result['disconnected_channel'] =  attr_builder(voice_client.channel, 'id', 'name')
         result['type'] = 'success'
 
         return result

@@ -1,7 +1,5 @@
 import asyncio
 import services.discord.client as client
-import services.discord.support.fetch as fetch
-from services.discord.support.id_name_builder import id_name_builder
 
 class Base:
     discord = client.get()
